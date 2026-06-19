@@ -4,7 +4,7 @@
 
 ### Machine Learning Developer
 
-**RAG Systems** · **Search Quality** · **Biomedical AI**
+**RAG Systems** · **Search Quality** · **Biomedical AI** · **Python Services**
 
 [![Telegram](https://img.shields.io/badge/Telegram-%40WinerGero-2AABEE?style=flat-square&logo=telegram&logoColor=white)](https://t.me/WinerGero)
 [![GitHub](https://img.shields.io/badge/GitHub-WeinerGero-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/WeinerGero)
@@ -20,21 +20,22 @@
 
 ## What I build
 
-**End-to-end ML and data systems** that turn unstructured scientific or operational data into working tools.
+End-to-end ML and data systems that turn raw scientific or operational data into usable tools.
 
 ```text
-Raw data -> Search or model -> Evaluation -> UI or API
+Data -> Retrieval or model -> Evaluation -> Interface or API
 ```
 
 </td>
 <td width="50%" valign="top">
 
-## Where I add value
+## What I focus on
 
-- Retrieval and RAG pipelines
+- RAG and information retrieval
+- Biomedical literature mining
 - Data collection and preprocessing
 - Search quality and answer evaluation
-- Python services and product-facing interfaces
+- Python APIs and local deployment
 
 </td>
 </tr>
@@ -42,14 +43,14 @@ Raw data -> Search or model -> Evaluation -> UI or API
 
 ---
 
-## How I approach ML projects
+## Portfolio map
 
 ```mermaid
 flowchart LR
-    A[Data collection] --> B[Preprocessing]
-    B --> C[Retrieval or modeling]
+    A[Data sources] --> B[Preprocessing]
+    B --> C[Search or model]
     C --> D[Evaluation]
-    D --> E[Interface or API]
+    D --> E[User interface or API]
 ```
 
 <table>
@@ -60,7 +61,7 @@ flowchart LR
 
 **Data**
 
-APIs, XML, databases, raw text
+APIs, XML, databases and raw text
 
 </td>
 <td align="center" width="25%">
@@ -69,7 +70,7 @@ APIs, XML, databases, raw text
 
 **ML layer**
 
-Search, embeddings, ranking, models
+Embeddings, retrieval, ranking and LLMs
 
 </td>
 <td align="center" width="25%">
@@ -78,7 +79,7 @@ Search, embeddings, ranking, models
 
 **Validation**
 
-Metrics, error analysis, test cases
+Metrics, error analysis and test cases
 
 </td>
 <td align="center" width="25%">
@@ -87,7 +88,7 @@ Metrics, error analysis, test cases
 
 **Product**
 
-Streamlit, REST API, local deployment
+Streamlit, REST API and local deployment
 
 </td>
 </tr>
@@ -103,27 +104,34 @@ Streamlit, REST API, local deployment
 
 # 🧬
 
-**RAG**
+[![RAG](https://img.shields.io/badge/RAG-6C63FF?style=flat-square)](https://github.com/WeinerGero/RAG-alzheimer-assistant)
+[![Biomedical AI](https://img.shields.io/badge/Biomedical%20AI-2F855A?style=flat-square)](https://github.com/WeinerGero/RAG-alzheimer-assistant)
 
 </td>
 <td width="82%" valign="top">
 
 ### [RAG Alzheimer Assistant](https://github.com/WeinerGero/RAG-alzheimer-assistant)
 
-Local RAG assistant for exploring PubMed literature on therapeutic targets in Alzheimer's disease.
+Local RAG assistant for searching PubMed literature on therapeutic targets in Alzheimer's disease.
 
-**Pipeline**
+```text
+PubMed API -> XML preprocessing -> Vector Search + BM25 -> RRF
+-> PMID grouping -> Mistral-Nemo via Ollama -> Streamlit
+```
 
-`PubMed API` -> `Preprocessing` -> `Vector Search + BM25` -> `RRF` -> `PMID grouping` -> `Mistral-Nemo` -> `Streamlit`
+**What I solved**
 
-**Why it is technically interesting**
+- Combined semantic retrieval with BM25 to keep exact biomedical entities, including SNP identifiers, in the search results.
+- Expanded each question into macro, micro and relational search strategies.
+- Grouped retrieved chunks by PMID before generation to avoid filling the context window with one publication.
+- Configured generation in Russian while keeping scientific entities and terminology in English.
 
-- Preserves exact biomedical entities such as SNP identifiers with hybrid retrieval.
-- Expands one question into macro, micro and relational search strategies.
-- Removes repeated chunks from the same publication before passing evidence to the LLM.
-- Produces Russian-language answers while preserving English scientific terminology.
-
-`Python` `ChromaDB` `BM25` `RRF` `Ollama` `Mistral-Nemo` `Streamlit`
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![PubMed](https://img.shields.io/badge/PubMed-Entrez%20API-326599?style=flat-square)](https://pubmed.ncbi.nlm.nih.gov/)
+[![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20store-4B5563?style=flat-square)](https://www.trychroma.com/)
+[![BM25](https://img.shields.io/badge/BM25-Lexical%20search-5A67D8?style=flat-square)](https://github.com/WeinerGero/RAG-alzheimer-assistant)
+[![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)](https://ollama.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io/)
 
 [Open repository](https://github.com/WeinerGero/RAG-alzheimer-assistant)
 
@@ -139,23 +147,34 @@ Local RAG assistant for exploring PubMed literature on therapeutic targets in Al
 
 # ⚙️
 
-**API**
+[![Backend](https://img.shields.io/badge/Backend-2563EB?style=flat-square)](https://github.com/WeinerGero/task_tracker_API)
+[![Medical scheduling](https://img.shields.io/badge/Medical%20scheduling-0E7490?style=flat-square)](https://github.com/WeinerGero/task_tracker_API)
 
 </td>
 <td width="82%" valign="top">
 
 ### [Task Tracker API](https://github.com/WeinerGero/task_tracker_API)
 
-Python service for managing one-time and recurring tasks in a medical scheduling context.
+Python microservice for managing one-time and recurring tasks in a medical scheduling context.
 
-**What it demonstrates**
+```text
+Recurrence rules -> Templates -> Generated task instances
+-> PostgreSQL -> REST API -> Swagger and tests
+```
 
-- Recurring schedule modeling through templates and generated task instances.
-- PostgreSQL migrations and JSONB recurrence configuration.
-- Docker-based local launch, Swagger documentation and automated tests.
-- Layered backend structure: API, services, repositories, schemas and domain utilities.
+**What I solved**
 
-`Python` `PostgreSQL` `Alembic` `Docker` `pytest` `REST API`
+- Modeled recurring schedules through separate templates and generated task instances.
+- Handled dates that do not exist in shorter months by moving a task to the last day of the month.
+- Stored variable recurrence rules in JSONB instead of adding sparse database columns.
+- Added generation limits, date-range filtering, Docker-based local launch and automated tests.
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Alembic](https://img.shields.io/badge/Alembic-Database%20migrations-6B7280?style=flat-square)](https://alembic.sqlalchemy.org/)
+[![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)](https://pytest.org/)
+[![Swagger](https://img.shields.io/badge/Swagger-API%20docs-85EA2D?style=flat-square&logo=swagger&logoColor=black)](https://github.com/WeinerGero/task_tracker_API)
 
 [Open repository](https://github.com/WeinerGero/task_tracker_API)
 
@@ -183,10 +202,10 @@ Python service for managing one-time and recurring tasks in a medical scheduling
 
 ### RAG and search
 
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![PubMed](https://img.shields.io/badge/PubMed-Entrez%20API-326599?style=flat-square)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-4B5563?style=flat-square)
 ![BM25](https://img.shields.io/badge/BM25-5A67D8?style=flat-square)
-![RRF](https://img.shields.io/badge/RRF-805AD5?style=flat-square)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
 
 </td>
 <td width="33%" valign="top">
@@ -195,8 +214,8 @@ Python service for managing one-time and recurring tasks in a medical scheduling
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Alembic](https://img.shields.io/badge/Alembic-6B7280?style=flat-square)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
 </td>
 </tr>
